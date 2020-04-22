@@ -7,6 +7,8 @@ package hr.goranmaras.projektmenadzerzavrsni;
 
 import hr.goranmaras.projektmenadzerzavrsni.util.HibernateUtil;
 import hr.goranmaras.projektmenadzerzavrsni.util.Pomocno;
+import hr.goranmaras.projektmenadzerzavrsni.util.slack.SlackPoruka;
+import hr.goranmaras.projektmenadzerzavrsni.util.slack.SlackUtil;
 import hr.goranmaras.projektmenadzerzavrsni.view.SplashScreen;
 
 /**
@@ -19,6 +21,9 @@ public class Start {
        // Pomocno.pocetniInsert();
        new SplashScreen().setVisible(true);
        // Pomocno.dodajDjelatnika(200);
+       
+       
+       
     }
     
     public static void main(String[] args) {

@@ -56,8 +56,8 @@ public class ViewTim extends javax.swing.JFrame {
     
     private void postaviVrijednosti() {
         txtNazivTima.setText(obrada.getEntitet().getNazivTima());
-        txtBrClanova.setText(Pomocno.getFormatCijelogBroja(lstClanTima.getModel().getSize()));
         postaviClanoveTima();
+        txtBrClanova.setText(Pomocno.getFormatCijelogBroja(lstClanTima.getModel().getSize()));
         postaviZadatke();
     }
     
@@ -315,7 +315,7 @@ public class ViewTim extends javax.swing.JFrame {
 
     private void btnDodajNoviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDodajNoviActionPerformed
         try {
-            
+            obrada.setEntitet(new Tim());
             ucitajVrijednosti();
             obrada.create();
             ucitaj();

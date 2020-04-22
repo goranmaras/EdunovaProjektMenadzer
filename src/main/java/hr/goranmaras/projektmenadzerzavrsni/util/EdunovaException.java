@@ -5,6 +5,9 @@
  */
 package hr.goranmaras.projektmenadzerzavrsni.util;
 
+import hr.goranmaras.projektmenadzerzavrsni.util.slack.SlackPoruka;
+import hr.goranmaras.projektmenadzerzavrsni.util.slack.SlackUtil;
+
 /**
  *
  * @author Profesor
@@ -16,12 +19,22 @@ public class EdunovaException extends Exception{
 
     public EdunovaException(String poruka) {
         this.poruka=poruka;
+        
+        //SLACK
+        SlackPoruka slackMessage = SlackPoruka.builder()
+                
+        .username("GoranMaras")
+        .text("SLACK BOT-->" + poruka)
+        .icon_emoji(":twice:")
+        .build();
+        SlackUtil.sendMessage(slackMessage);
     }
 
     public String getPoruka() {
         return poruka;
     }
     
-    
+   
+          
     
 }

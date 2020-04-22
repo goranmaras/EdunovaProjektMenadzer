@@ -72,7 +72,7 @@ public class ObradaTim extends Obrada<Tim>{
     
     @Override
     protected void kontrolaCreate() throws EdunovaException {
-        
+       
     }
 
     @Override
@@ -82,7 +82,7 @@ public class ObradaTim extends Obrada<Tim>{
 
     @Override
     protected void kontrolaDelete() throws EdunovaException {
-        
+         kontrolaBrisanjeTima();
     }
 
     @Override
@@ -92,6 +92,12 @@ public class ObradaTim extends Obrada<Tim>{
 
     @Override
     protected void nakonSpremanja() throws EdunovaException {
+    }
+
+    private void kontrolaBrisanjeTima() throws EdunovaException{
+        if(entitet.getClanovi().size()>0){
+            throw new EdunovaException("Ne mogu obrisati Tim, djelatnici su vezani");
+        }
     }
     
 }
